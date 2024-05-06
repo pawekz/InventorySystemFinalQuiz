@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inventory System | Home</title>
+</head>
+<body>
+{% csrf_token %}
+    <h2>Inventory System</h2>
+
+    <a href="{% url 'add_product' %}"><button>Add Product</button></a>
+    <a href="{% url 'add_supplier' %}"><button>Add Supplier</button></a>
+    <a href="{% url 'product_list' %}"><button>Product List</button></a>
+    <a href="{% url 'supplier_list' %}"><button>Supplier List</button></a>
+
+    {% for products in product %}
+        <p>{{ products.product_name }}</p>
+        <p>{{ products.product_code }}</p>
+        <p>{{ products.product_description }}</p>
+        <p>{{ products.product_brand }}</p>
+    	<p>{{ products.product_price }}</p>
+        <p>{{ products.supplier }}</p>
+    {% endfor %}
+    
+    
+</body>
+</html>

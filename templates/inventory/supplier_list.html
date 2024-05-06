@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory System | Supplier List</title>
+</head>
+<body>
+    <h2>Inventory System | Supplier List</h2>
+    {% for supplier in suppliers %}
+        <p>Name: {{ supplier.supplier_name }}</p>
+        <p>Contact Person: {{ supplier.contact_person }}</p>
+        <p>Email: {{ supplier.email }}</p>
+        <p>Phone Number: {{ supplier.phone_number }}</p>
+        <p>Address: {{ supplier.address }}</p>
+        <p>Company Website: {{ supplier.company_website }}</p>
+        <p><a href="{% url 'supplier_detail' supplier.id %}">View Details</a></p>
+    {% empty %}
+        <p>No suppliers available.</p>
+    {% endfor %}
+</body>
+</html>
