@@ -1,4 +1,4 @@
-# Inventory System
+# A Very Simple Inventory System
 
 This is a simple inventory management system built with Django.<br>
 <strong>NOTE: pure HTML only</strong>
